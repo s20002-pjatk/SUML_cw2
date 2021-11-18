@@ -25,17 +25,17 @@ def main():
 		st.title("Czy wyzdrowiejesz?")
 
 	with left:
-		objawy_radio = st.radio( "Objawy", list(objawy_d.keys()), format_func=lambda x : objawy_d[x] )
-		choroby_radio = st.radio( "Choroby", list(choroby_d.keys()), format_func=lambda x: choroby_d[x])
+		objawy_slider = st.slider( "Objawy", value=1, min_value=1, max_value=5)
+		choroby_slider = st.slider( "Choroby", value=0, min_value=0, max_value=5)
 		#embarked_radio = st.radio( "Port zaokrętowania", list(embarked_d.keys()), index=2, format_func= lambda x: embarked_d[x] )
 
 	with right:
 		wiek_slider = st.slider("Wiek", value=50, min_value=1, max_value=100)
-		wzrost_slider = st.slider( "Wzrost", min_value=40, max_value=220)
+		wzrost_slider = st.slider( "Wzrost",value=170, min_value=40, max_value=220)
 	#	parch_slider = st.slider( "# Liczba rodziców i/lub dzieci", min_value=0, max_value=6)
 	#	fare_slider = st.slider( "Cena biletu", min_value=0, max_value=500, step=10)
 
-	data = [[ objawy_radio,wiek_slider,choroby_radio, wzrost_slider ]]
+	data = [[ objawy_slider,wiek_slider,choroby_slider, wzrost_slider ]]
 	survival = model.predict(data)
 	s_confidence = model.predict_proba(data)
 
