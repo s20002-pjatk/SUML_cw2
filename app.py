@@ -9,7 +9,7 @@ model = pickle.load(open(filename,'rb'))
 # otwieramy wcześniej wytrenowany model
 
 objawy_d = {0:"1",1:"2",2:"3",3:"4",4:"5"}
-choroby_d = {0:"0",1:"1",2:"3",3:"4",4:"5"}
+choroby_d = {0:"0",1:"1",2:"2",3:"3",4:"4",5:"5"}
 #embarked_d = {0:"Cherbourg", 1:"Queenstown", 2:"Southampton"}
 # o ile wcześniej kodowaliśmy nasze zmienne, to teraz wprowadzamy etykiety z ich nazewnictwem
 def main():
